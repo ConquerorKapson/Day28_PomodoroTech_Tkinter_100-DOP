@@ -49,18 +49,18 @@ def start_timer():
     global COMPLETED_CYCLE
     REPS += 1
     if REPS % 8 == 0:
-        start_countdown(LONG_BREAK_MIN*60)
+        start_countdown(LONG_BREAK_MIN * 60)
         heading.config(text="Breakkk", font=(FONT_NAME, 30, "bold"), fg=RED)
         TICK = []
         COMPLETED_CYCLE += 1
         completed_cycle.config(text=f"Completed Cycle : {COMPLETED_CYCLE}", font=(FONT_NAME, 15), fg=GREEN, bg=YELLOW)
         # print("Long break : ", LONG_BREAK_MIN)
     elif REPS % 2 == 0:
-        start_countdown(SHORT_BREAK_MIN*60)
+        start_countdown(SHORT_BREAK_MIN * 60)
         heading.config(text="Break", font=(FONT_NAME, 30, "bold"), fg=PINK)
         # print("Short Break : ", SHORT_BREAK_MIN)
     else:
-        start_countdown(WORK_MIN*60)
+        start_countdown(WORK_MIN * 60)
         heading.config(text="Work", font=(FONT_NAME, 30, "bold"), fg=GREEN)
         TICK.append("✔")
         tick.config(text=TICK, font=("", 15), fg=GREEN, bg=YELLOW)
@@ -83,7 +83,6 @@ def start_countdown(time_to_display):
         TIMER = window.after(1000, start_countdown, time_to_display - 1)
     else:
         start_timer()
-
 
 
 # ==============UI CODE==============================#

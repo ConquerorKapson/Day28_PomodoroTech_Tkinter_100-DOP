@@ -3,13 +3,13 @@ The Pomodoro Technique is a time management system that encourages people to wor
 
 COMPLETED_CYCLE -> maintains a count of the the number of cycles you have completed
 one cycle consists of
-  25 min work
-  5 min break
-  25 min work
-  5 min break
-  25 min work
-  5 min break
-  25 min work
+  25 min work,
+  5 min break,
+  25 min work,
+  5 min break,
+  25 min work,
+  5 min break,
+  25 min work,
   and then a 20 min long break
 
 START button -> will trigger the timer to start and the "✔" will represent the on which working session you are.

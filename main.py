@@ -10,13 +10,13 @@ FONT_NAME = "Courier"
 TICK = []
 COMPLETED_CYCLE = 0
 TIMER = None
-# WORK_MIN = 25
-# SHORT_BREAK_MIN = 5
-# LONG_BREAK_MIN = 20
-
-WORK_MIN = 10
+WORK_MIN = 25
 SHORT_BREAK_MIN = 5
-LONG_BREAK_MIN = 7
+LONG_BREAK_MIN = 20
+
+# WORK_MIN = 10
+# SHORT_BREAK_MIN = 5
+# LONG_BREAK_MIN = 7
 
 REPS = 0
 
@@ -49,18 +49,18 @@ def start_timer():
     global COMPLETED_CYCLE
     REPS += 1
     if REPS % 8 == 0:
-        start_countdown(LONG_BREAK_MIN)
+        start_countdown(LONG_BREAK_MIN*60)
         heading.config(text="Breakkk", font=(FONT_NAME, 30, "bold"), fg=RED)
         TICK = []
         COMPLETED_CYCLE += 1
         completed_cycle.config(text=f"Completed Cycle : {COMPLETED_CYCLE}", font=(FONT_NAME, 15), fg=GREEN, bg=YELLOW)
         # print("Long break : ", LONG_BREAK_MIN)
     elif REPS % 2 == 0:
-        start_countdown(SHORT_BREAK_MIN)
+        start_countdown(SHORT_BREAK_MIN*60)
         heading.config(text="Break", font=(FONT_NAME, 30, "bold"), fg=PINK)
         # print("Short Break : ", SHORT_BREAK_MIN)
     else:
-        start_countdown(WORK_MIN)
+        start_countdown(WORK_MIN*60)
         heading.config(text="Work", font=(FONT_NAME, 30, "bold"), fg=GREEN)
         TICK.append("✔")
         tick.config(text=TICK, font=("", 15), fg=GREEN, bg=YELLOW)
